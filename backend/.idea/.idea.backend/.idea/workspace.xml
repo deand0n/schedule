@@ -4,10 +4,8 @@
     <projectFile>backend/backend.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend.csproj" afterDir="false" />
+    <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
