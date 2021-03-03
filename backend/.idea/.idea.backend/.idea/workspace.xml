@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
+      <change afterPath="$PROJECT_DIR$/backend/Models/Day.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Models/Lesson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Models/Lesson.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Properties/launchSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,12 +18,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
+      <option value="$PROJECT_DIR$/backend/Models/Day.cs" />
       <option value="$PROJECT_DIR$/backend/Models/Lesson.cs" />
+      <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
+      <option value="$PROJECT_DIR$/backend/Properties/launchSettings.json" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p7nFcaJmdNin7YQ5afeaahdMdV" />
@@ -31,7 +43,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
@@ -77,7 +90,16 @@
       <workItem from="1614542913523" duration="603000" />
       <workItem from="1614592721981" duration="644000" />
       <workItem from="1614721426709" duration="605000" />
+      <workItem from="1614765431417" duration="1762000" />
     </task>
+    <task id="LOCAL-00001" summary="probably something important, idk">
+      <created>1614723462431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614723462431</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,5 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="probably something important, idk" />
+    <option name="LAST_COMMIT_MESSAGE" value="probably something important, idk" />
   </component>
 </project>

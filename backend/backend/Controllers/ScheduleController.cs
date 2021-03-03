@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace backend.Controllers
 {
     [ApiController]
-    [Route("api/test")]
+    [Route("api/schedule")]
     public class ScheduleController : Controller
     {
         // TODO move this variable from here
