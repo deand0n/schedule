@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
-      <change afterPath="$PROJECT_DIR$/backend/Models/Day.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Models/Lesson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Models/Lesson.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Properties/launchSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +21,17 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://F:/PROJECTS/git/schedule/backend/backend/Controllers/ScheduleController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/PROJECTS/git/schedule/backend/backend/Controllers/ScheduleController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://F:/PROJECTS/git/schedule/backend/backend/Models/Lesson.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/backend/Models/Day.cs" />
+      <option value="$PROJECT_DIR$/backend/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/backend/Models/Lesson.cs" />
       <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
-      <option value="$PROJECT_DIR$/backend/Properties/launchSettings.json" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p7nFcaJmdNin7YQ5afeaahdMdV" />
@@ -40,11 +41,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
@@ -90,7 +93,10 @@
       <workItem from="1614542913523" duration="603000" />
       <workItem from="1614592721981" duration="644000" />
       <workItem from="1614721426709" duration="605000" />
-      <workItem from="1614765431417" duration="1762000" />
+      <workItem from="1614765431417" duration="4157000" />
+      <workItem from="1614770877999" duration="5144000" />
+      <workItem from="1614801909920" duration="2491000" />
+      <workItem from="1614932927321" duration="19991000" />
     </task>
     <task id="LOCAL-00001" summary="probably something important, idk">
       <created>1614723462431</created>
