@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -30,40 +31,97 @@ namespace backend.Controllers
             };
 
             var content = new FormUrlEncodedContent(values);
-
             // send POST request to timetable and save it to "response"
             var response =  await Client.PostAsync("http://195.95.232.162:8082/cgi-bin/timetable.cgi?n=700", content);
-
             // encode response using "windows 1251"
             var buffer = await response.Content.ReadAsByteArrayAsync();
             var byteArray = buffer.ToArray();
             var responseString = Encoding.GetEncoding(1251).GetString(byteArray, 0, byteArray.Length);
             
-            // regex for tables
-            Regex tableRegex = new Regex("<div class=\"col-md-6\">(.*?)</div>");
-            // regex for date
-            Regex dateRegex = new Regex("<h4>(.*?) <small>");
+            // regex for day (div's around tables)
+            var dayRegex = new Regex("<div class=\"col-md-6\">(.*?)</table></div>");
+            // regex for date (xx.xx.xxxx)
+            var dateRegex = new Regex("<h4>(.*?) <small>");
             // regex for day of the week 
-            Regex weekDayRegex = new Regex("<small>(.*?)</small>");
+            var weekDayRegex = new Regex("<small>(.*?)</small>");
+            // regex for lessons in the day
+            var lessonRegex = new Regex("<tr>(.*?)</tr>");
             
-            MatchCollection matches = tableRegex.Matches(responseString);
-            int counter = tableRegex.Matches(responseString).Count;  
+            var ordinalNumberRegex = new Regex(@"<td>(.?\d)</td>");
+            var startTimeRegex = new Regex(@"<td>([0-9]{2}\:[0-9]{2})<br>");
+            var endTimeRegex = new Regex(@"<br>([0-9]{2}\:[0-9]{2})</td>");
+            var lessonTypeRegex = new Regex(@"<td>(.*?)<br>");
+            var nameRegex = new Regex(@"[0-9]{2}\:[0-9]{2}</td><td>(.*?)</td></tr>");
             
-            Day[] days = new Day[counter];
+            
+            
+            var dayMatches = dayRegex.Matches(responseString);
+            int dayCounter = dayMatches.Count;
+            Day[] days = new Day[dayCounter];
+            int[] lessonsCounter = new int[dayCounter];
             string tables = "";
-            int j = 0;
             
-            foreach (Match match in matches)
+            for (int i = 0; i < dayCounter; i++)
             {
-                tables += match.Value;
-                days[j] = new Day();
-                j++;
+                tables += dayMatches[i].Value;
+            }
+            
+            for (int i = 0; i < dayCounter; i++)
+            {
+                days[i] = new Day();
+                days[i].Lessons = new List<Lesson>();
+                lessonsCounter[i] = lessonRegex.Matches(dayMatches[i].Value).Count;
+                for (int j = 0; j < lessonsCounter[i]; j++)
+                {
+                    days[i].Lessons.Add(new Lesson());
+                }
             }
 
-            for (int i = 0; i < counter; i++)
+            //TODO refactor this mess
+            
+            for (int i = 0; i < dayCounter; i++)
             {
                 days[i].Date = dateRegex.Matches(tables)[i].Groups[1].Value;
                 days[i].DayOfTheWeek = weekDayRegex.Matches(tables)[i].Groups[1].Value;
+                for (int j = 0; j < lessonsCounter[i]; j++)
+                {
+                    days[i].Lessons[j].OrdinalNumber = ordinalNumberRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                    days[i].Lessons[j].StartTime = startTimeRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                    days[i].Lessons[j].EndTime = endTimeRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                    string tempName = nameRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                    string tempType, tempGroups;
+                    if (tempName == " ")
+                    {
+                        tempName = null;
+                        tempType = null;
+                        tempGroups = null;
+                    }
+                    else
+                    {
+                        Regex r = new Regex(@"\((.*?)\)<br> ");
+                        tempType = r.Match(tempName).Groups[1].Value;
+                        
+                        tempName = tempName.Replace(r.Match(tempName).Value, "");
+                        tempName = tempName.Replace("\u00A0", " ");
+                        tempName = tempName.Replace("<br>  <div class='link'> </div> ", "");
+
+                        
+                        tempGroups = "DS-1910";
+                        if (tempName.Contains("<br>"))
+                        {
+                            Regex rrr = new Regex("<br> (.*?)<br> <div class='link'> </div>");
+                            tempGroups = rrr.Match(tempName).Groups[1].Value;
+
+                            tempName = tempName.Replace(rrr.Match(tempName).Value, "");
+                        }
+                        
+                    }
+
+                    Console.WriteLine(tempName);
+                    days[i].Lessons[j].Name = tempName;
+                    days[i].Lessons[j].Type = tempType;
+                    days[i].Lessons[j].Groups = tempGroups;
+                }
             }
             return days;
         }
