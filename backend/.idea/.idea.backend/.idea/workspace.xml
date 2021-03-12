@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Models/Day.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Models/Day.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Models/Lesson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Models/Lesson.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,12 +16,31 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7810C8E8-2D03-481C-95BC-9B22D076C0B9/C/Regex.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
+      <option value="$PROJECT_DIR$/backend/Properties/launchSettings.json" />
+      <option value="$PROJECT_DIR$/backend/Models/Day.cs" />
       <option value="$PROJECT_DIR$/backend/Models/Lesson.cs" />
+      <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p7nFcaJmdNin7YQ5afeaahdMdV" />
@@ -28,10 +50,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
@@ -77,7 +103,43 @@
       <workItem from="1614542913523" duration="603000" />
       <workItem from="1614592721981" duration="644000" />
       <workItem from="1614721426709" duration="605000" />
+      <workItem from="1614765431417" duration="4157000" />
+      <workItem from="1614770877999" duration="5144000" />
+      <workItem from="1614801909920" duration="2491000" />
+      <workItem from="1614932927321" duration="20377000" />
+      <workItem from="1614981792481" duration="2294000" />
+      <workItem from="1615040587169" duration="5890000" />
+      <workItem from="1615059218907" duration="4271000" />
+      <workItem from="1615156544576" duration="597000" />
+      <workItem from="1615191889095" duration="5319000" />
+      <workItem from="1615238211661" duration="1000" />
+      <workItem from="1615238381635" duration="33000" />
+      <workItem from="1615238544973" duration="350000" />
+      <workItem from="1615239000581" duration="79000" />
+      <workItem from="1615239290866" duration="1899000" />
+      <workItem from="1615276781130" duration="3110000" />
+      <workItem from="1615303540693" duration="9924000" />
+      <workItem from="1615371447453" duration="626000" />
+      <workItem from="1615387065675" duration="18099000" />
+      <workItem from="1615448473139" duration="3571000" />
+      <workItem from="1615478186050" duration="1320000" />
+      <workItem from="1615546393672" duration="2781000" />
     </task>
+    <task id="LOCAL-00001" summary="probably something important, idk">
+      <created>1614723462431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614723462431</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added finding of date and day of the week in parsed HTML">
+      <created>1614974022850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614974022850</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,5 +161,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="probably something important, idk" />
+    <MESSAGE value="added finding of date and day of the week in parsed HTML" />
+    <option name="LAST_COMMIT_MESSAGE" value="added finding of date and day of the week in parsed HTML" />
   </component>
 </project>
