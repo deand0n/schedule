@@ -50,7 +50,6 @@ namespace backend.Controllers
             var ordinalNumberRegex = new Regex(@"<td>(.?\d)</td>");
             var startTimeRegex = new Regex(@"<td>([0-9]{2}\:[0-9]{2})<br>");
             var endTimeRegex = new Regex(@"<br>([0-9]{2}\:[0-9]{2})</td>");
-            var lessonTypeRegex = new Regex(@"<td>(.*?)<br>");
             var nameRegex = new Regex(@"[0-9]{2}\:[0-9]{2}</td><td>(.*?)</td></tr>");
             
             
@@ -76,7 +75,6 @@ namespace backend.Controllers
                     days[i].Lessons.Add(new Lesson());
                 }
             }
-
             //TODO refactor this mess
             
             for (int i = 0; i < dayCounter; i++)
@@ -88,6 +86,7 @@ namespace backend.Controllers
                     days[i].Lessons[j].OrdinalNumber = ordinalNumberRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
                     days[i].Lessons[j].StartTime = startTimeRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
                     days[i].Lessons[j].EndTime = endTimeRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                    
                     string tempName = nameRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
                     string tempType, tempGroups;
                     if (tempName == " ")
@@ -98,26 +97,23 @@ namespace backend.Controllers
                     }
                     else
                     {
-                        Regex r = new Regex(@"\((.*?)\)<br> ");
-                        tempType = r.Match(tempName).Groups[1].Value;
+                        Regex typeRegex = new Regex(@"\((.*?)\)<br> ");
+                        tempType = typeRegex.Match(tempName).Groups[1].Value;
                         
-                        tempName = tempName.Replace(r.Match(tempName).Value, "");
+                        tempName = tempName.Replace(typeRegex.Match(tempName).Value, "");
                         tempName = tempName.Replace("\u00A0", " ");
                         tempName = tempName.Replace("<br>  <div class='link'> </div> ", "");
 
-                        
                         tempGroups = "DS-1910";
                         if (tempName.Contains("<br>"))
                         {
-                            Regex rrr = new Regex("<br> (.*?)<br> <div class='link'> </div>");
-                            tempGroups = rrr.Match(tempName).Groups[1].Value;
+                            Regex groupsRegex = new Regex("<br> (.*?)<br> <div class='link'> </div>");
+                            tempGroups = groupsRegex.Match(tempName).Groups[1].Value;
 
-                            tempName = tempName.Replace(rrr.Match(tempName).Value, "");
+                            tempName = tempName.Replace(groupsRegex.Match(tempName).Value, "");
                         }
                         
                     }
-
-                    Console.WriteLine(tempName);
                     days[i].Lessons[j].Name = tempName;
                     days[i].Lessons[j].Type = tempType;
                     days[i].Lessons[j].Groups = tempGroups;
