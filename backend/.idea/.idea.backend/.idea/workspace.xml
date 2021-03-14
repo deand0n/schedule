@@ -7,8 +7,6 @@
     <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Models/Day.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Models/Day.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Models/Lesson.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Models/Lesson.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +122,9 @@
       <workItem from="1615448473139" duration="3571000" />
       <workItem from="1615478186050" duration="1320000" />
       <workItem from="1615546393672" duration="2781000" />
+      <workItem from="1615565838435" duration="4496000" />
+      <workItem from="1615710185215" duration="2428000" />
+      <workItem from="1615722493417" duration="11778000" />
     </task>
     <task id="LOCAL-00001" summary="probably something important, idk">
       <created>1614723462431</created>
