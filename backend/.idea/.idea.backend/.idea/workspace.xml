@@ -31,6 +31,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7810C8E8-2D03-481C-95BC-9B22D076C0B9/C/Regex.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/02C6517A-9E0B-4C61-81C9-B99D7C490D76/50/FormUrlEncodedContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -125,6 +126,10 @@
       <workItem from="1615565838435" duration="4496000" />
       <workItem from="1615710185215" duration="2428000" />
       <workItem from="1615722493417" duration="11778000" />
+      <workItem from="1615797487711" duration="2319000" />
+      <workItem from="1615802503381" duration="3671000" />
+      <workItem from="1615813808341" duration="1278000" />
+      <workItem from="1615824228808" duration="4429000" />
     </task>
     <task id="LOCAL-00001" summary="probably something important, idk">
       <created>1614723462431</created>
