@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +35,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7810C8E8-2D03-481C-95BC-9B22D076C0B9/C/Regex.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/02C6517A-9E0B-4C61-81C9-B99D7C490D76/50/FormUrlEncodedContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/647FAEDF-A0C0-4C01-B79E-04471FFD80DF/41A/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7810C8E8-2D03-481C-95BC-9B22D076C0B9/5/Capture.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/backend/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/backend/Models/Day.cs" />
       <option value="$PROJECT_DIR$/backend/Models/Lesson.cs" />
+      <option value="$PROJECT_DIR$/backend/Services/ITestClass.cs" />
       <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
+      <option value="$PROJECT_DIR$/backend/Startup.cs" />
+      <option value="$PROJECT_DIR$/backend/Services/TestClass.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p7nFcaJmdNin7YQ5afeaahdMdV" />
@@ -56,7 +62,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
@@ -129,7 +135,11 @@
       <workItem from="1615797487711" duration="2319000" />
       <workItem from="1615802503381" duration="3671000" />
       <workItem from="1615813808341" duration="1278000" />
-      <workItem from="1615824228808" duration="4429000" />
+      <workItem from="1615824228808" duration="5630000" />
+      <workItem from="1615882416467" duration="4022000" />
+      <workItem from="1616012213784" duration="458000" />
+      <workItem from="1616065132752" duration="3961000" />
+      <workItem from="1616160612734" duration="8633000" />
     </task>
     <task id="LOCAL-00001" summary="probably something important, idk">
       <created>1614723462431</created>
