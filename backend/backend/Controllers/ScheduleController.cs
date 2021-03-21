@@ -17,37 +17,28 @@ namespace backend.Controllers
     public class ScheduleController : Controller
     {
         
-        private ITestClass _testClass;
+        private readonly ITestClass _testClass;
         public ScheduleController(ITestClass testClass)
         {
             _testClass = testClass;
         }
+        
         [HttpGet]
-        public async Task<Day[]> Get()
+        public async Task<Day[]> Get(RequestForm requestForm)
         {
-            // Encoding utf8 = Encoding.UTF8;
-            // Encoding win1251 = Encoding.GetEncoding(1251);
-            // string sss = values["group"];
-            // byte[] utf8Bytes = utf8.GetBytes(sss.Substring(0, sss.IndexOf("-")));
-            // byte[] win1251Bytes = Encoding.Convert(utf8, win1251, utf8Bytes);
-            
-            // string hex = BitConverter.ToString(win1251Bytes);
-            // hex = hex.Replace("-", "%");
-            // hex += sss.Substring(sss.IndexOf("-"), sss.Length-2);
-            // hex = hex.Insert(0, "%");
-            // Console.WriteLine(hex);
-            // values["group"] = hex;
-            // Console.WriteLine(values["group"]);
-            // string encodedString = win1251.GetString(win1251Bytes);
-            // values["group"] = encodedString;
+            requestForm.Group = _testClass.GroupNameToHex(requestForm.Group);
             
             var content = new StringContent(
-                "faculty=1004&teacher=&group=DS-1910&sdate=07.03.2021&edate=28.03.2021", Encoding.UTF8, "text/html");
+                $"faculty={requestForm.Faculty}" +
+                $"&teacher={requestForm.Teacher}" +
+                $"&group={requestForm.Group}" +
+                $"&sdate={requestForm.Sdate}" +
+                $"&edate={requestForm.Edate}", Encoding.UTF8, "text/html");
+                 
+            string responseString = 
+                await _testClass.PostDataAsync("http://195.95.232.162:8082/cgi-bin/timetable.cgi?n=700", content);
             
-             var responseString = await _testClass.PostDataAsync("http://195.95.232.162:8082/cgi-bin/timetable.cgi?n=700", content);
-
-             var days = _testClass.ProcessData(responseString);
-
+            var days = _testClass.ProcessData(responseString);
             return days;
         }
     }

@@ -9,5 +9,6 @@ namespace backend.Services
     {
         public Task<string> PostDataAsync(string requestUri, StringContent content);
         public Day[] ProcessData(string responseString);
+        public string GroupNameToHex(string groupName);
     }
 }

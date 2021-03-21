@@ -17,6 +17,7 @@
         <e p="Models" t="Include">
           <e p="Day.cs" t="Include" />
           <e p="Lesson.cs" t="Include" />
+          <e p="RequestForm.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using backend.Models;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace backend.Services
 {
@@ -30,6 +33,40 @@ namespace backend.Services
             return responseString;
         }
 
+        public string GroupNameToHex(string groupName)
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            Regex groupNameCyrillicRegex = new Regex(@"(([А-ЯҐЄІЇа-я].*?)|(\+))");
+            
+            int counter = groupNameCyrillicRegex.Matches(groupName).Count;
+
+            var groupNameCollection = groupNameCyrillicRegex.Matches(groupName);
+            
+            
+            if (Regex.IsMatch(groupName, @"\p{IsCyrillic}"))
+            {
+                var dictionary = new Dictionary<string, string>();
+                for (int i = 0; i < counter; i++)
+                {
+                    Encoding utf8 = Encoding.UTF8;
+                    Encoding win1251 = Encoding.GetEncoding(1251);
+                    string tempGroup = groupNameCollection[i].Value;
+                    byte[] utf8Bytes = utf8.GetBytes(tempGroup);
+                    byte[] win1251Bytes = Encoding.Convert(utf8, win1251, utf8Bytes);
+                        
+                    string hex = BitConverter.ToString(win1251Bytes);
+                    hex = hex.Insert(0, "%");
+                    dictionary.Add(groupNameCollection[i].Value, hex);
+                }
+                var stringVariableMatches = groupNameCyrillicRegex.Replace(groupName,
+                    m => dictionary.ContainsKey(m.Value) ? dictionary[m.Value] : m.Value);
+                
+                groupName = stringVariableMatches;
+            }
+            return groupName;
+        }
+
+
         public Day[] ProcessData(string responseString)
         {
              // regex for day (div's around tables)
@@ -40,7 +77,7 @@ namespace backend.Services
              var weekDayRegex = new Regex("<small>(.*?)</small>");
              // regex for lessons in the day
              var lessonRegex = new Regex("<tr>(.*?)</tr>");
-            
+             
              var ordinalNumberRegex = new Regex(@"<td>(.?\d)</td>");
              var startTimeRegex = new Regex(@"<td>([0-9]{2}\:[0-9]{2})<br>");
              var endTimeRegex = new Regex(@"<br>([0-9]{2}\:[0-9]{2})</td>");

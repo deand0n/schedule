@@ -6,14 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="eda41fd6-f7a2-49df-a04a-ad0b380d1cb5" name="Default Changelist" comment="Added parser and temporary model">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Services/ITestClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Services/ITestClass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Services/TestClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Services/TestClass.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -42,10 +51,12 @@
       <option value="$PROJECT_DIR$/backend/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/backend/Models/Day.cs" />
       <option value="$PROJECT_DIR$/backend/Models/Lesson.cs" />
-      <option value="$PROJECT_DIR$/backend/Services/ITestClass.cs" />
-      <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
       <option value="$PROJECT_DIR$/backend/Startup.cs" />
+      <option value="$PROJECT_DIR$/backend/index.html" />
+      <option value="$PROJECT_DIR$/backend/Models/RequestForm.cs" />
+      <option value="$PROJECT_DIR$/backend/Services/ITestClass.cs" />
       <option value="$PROJECT_DIR$/backend/Services/TestClass.cs" />
+      <option value="$PROJECT_DIR$/backend/Controllers/ScheduleController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1p7nFcaJmdNin7YQ5afeaahdMdV" />
@@ -57,12 +68,13 @@
   <component name="PropertiesComponent">
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502052" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.backend">
@@ -139,7 +151,11 @@
       <workItem from="1615882416467" duration="4022000" />
       <workItem from="1616012213784" duration="458000" />
       <workItem from="1616065132752" duration="3961000" />
-      <workItem from="1616160612734" duration="8633000" />
+      <workItem from="1616160612734" duration="9795000" />
+      <workItem from="1616260497086" duration="2262000" />
+      <workItem from="1616263198629" duration="9073000" />
+      <workItem from="1616334591416" duration="7015000" />
+      <workItem from="1616355650073" duration="8054000" />
     </task>
     <task id="LOCAL-00001" summary="probably something important, idk">
       <created>1614723462431</created>
@@ -180,5 +196,9 @@
     <MESSAGE value="probably something important, idk" />
     <MESSAGE value="added finding of date and day of the week in parsed HTML" />
     <option name="LAST_COMMIT_MESSAGE" value="added finding of date and day of the week in parsed HTML" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
