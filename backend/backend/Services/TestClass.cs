@@ -19,32 +19,18 @@ namespace backend.Services
         {
             this.client = client;
         }
-        
-        public async Task<string> PostDataAsync(string requestUri, StringContent content)
-        {
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            var response = await client.PostAsync(requestUri, content);
-            
-            // encode response using "windows 1251"
-            var buffer = await response.Content.ReadAsByteArrayAsync();
-            var byteArray = buffer.ToArray();
-            var responseString = Encoding.GetEncoding(1251).GetString(byteArray, 0, byteArray.Length);
-            
-            return responseString;
-        }
 
         public string GroupNameToHex(string groupName)
         {
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Regex groupNameCyrillicRegex = new Regex(@"(([А-ЯҐЄІЇа-я].*?)|(\+))");
-            
-            int counter = groupNameCyrillicRegex.Matches(groupName).Count;
-
-            var groupNameCollection = groupNameCyrillicRegex.Matches(groupName);
-            
-            
             if (Regex.IsMatch(groupName, @"\p{IsCyrillic}"))
             {
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                Regex groupNameCyrillicRegex = new Regex(@"(([А-ЯҐЄІЇа-я].*?)|(\+))");
+            
+                int counter = groupNameCyrillicRegex.Matches(groupName).Count;
+
+                var groupNameCollection = groupNameCyrillicRegex.Matches(groupName);
+
                 var dictionary = new Dictionary<string, string>();
                 for (int i = 0; i < counter; i++)
                 {
@@ -66,7 +52,19 @@ namespace backend.Services
             return groupName;
         }
 
-
+        public async Task<string> PostDataAsync(string requestUri, StringContent content)
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            var response = await client.PostAsync(requestUri, content);
+            
+            // encode response using "windows 1251"
+            var buffer = await response.Content.ReadAsByteArrayAsync();
+            var byteArray = buffer.ToArray();
+            var responseString = Encoding.GetEncoding(1251).GetString(byteArray, 0, byteArray.Length);
+            
+            return responseString;
+        }
+        
         public Day[] ProcessData(string responseString)
         {
              // regex for day (div's around tables)
@@ -81,7 +79,9 @@ namespace backend.Services
              var ordinalNumberRegex = new Regex(@"<td>(.?\d)</td>");
              var startTimeRegex = new Regex(@"<td>([0-9]{2}\:[0-9]{2})<br>");
              var endTimeRegex = new Regex(@"<br>([0-9]{2}\:[0-9]{2})</td>");
+             var typeRegex = new Regex(@"\((.*?)\)<br> ");
              var nameRegex = new Regex(@"[0-9]{2}\:[0-9]{2}</td><td>(.*?)</td></tr>");
+             var groupsRegex = new Regex("<br> (.*?)<br> <div class='link'> </div>");
             
              var dayMatches = dayRegex.Matches(responseString);
              int dayCounter = dayMatches.Count;
@@ -109,12 +109,12 @@ namespace backend.Services
                  for (int j = 0; j < lessonsCounter[i]; j++)
                  {
                      days[i].Lessons[j].OrdinalNumber =
-                         ordinalNumberRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
-                     days[i].Lessons[j].StartTime = startTimeRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
-                     days[i].Lessons[j].EndTime = endTimeRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                         ordinalNumberRegex.Match(dayMatches[i].Value).Groups[1].Value;
+                     days[i].Lessons[j].StartTime = startTimeRegex.Match(dayMatches[i].Value).Groups[1].Value;
+                     days[i].Lessons[j].EndTime = endTimeRegex.Match(dayMatches[i].Value).Groups[1].Value;
 
                      // create temporary variables 
-                     string tempName = nameRegex.Matches(dayMatches[i].Value)[j].Groups[1].Value;
+                     string tempName = nameRegex.Match(dayMatches[i].Value).Groups[1].Value;
                      string tempType, tempGroups;
                      // if there are empty lesson, assign temporary variables to null
                      if (tempName == " ")
@@ -125,7 +125,6 @@ namespace backend.Services
                      }
                      else
                      {
-                         Regex typeRegex = new Regex(@"\((.*?)\)<br> ");
                          tempType = typeRegex.Match(tempName).Groups[1].Value;
 
                          // remove junk from name of the lesson
@@ -139,7 +138,6 @@ namespace backend.Services
                          {
                              // if there are more than one group
                              // fill 'tempGroups' variable and remove it from 'tempName'  
-                             Regex groupsRegex = new Regex("<br> (.*?)<br> <div class='link'> </div>");
                              tempGroups = groupsRegex.Match(tempName).Groups[1].Value;
 
                              tempName = tempName.Replace(groupsRegex.Match(tempName).Value, "");

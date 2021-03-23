@@ -26,20 +26,17 @@ namespace backend.Controllers
         [HttpGet]
         public async Task<Day[]> Get(RequestForm requestForm)
         {
-            requestForm.Group = _testClass.GroupNameToHex(requestForm.Group);
-            
             var content = new StringContent(
                 $"faculty={requestForm.Faculty}" +
                 $"&teacher={requestForm.Teacher}" +
-                $"&group={requestForm.Group}" +
+                $"&group={_testClass.GroupNameToHex(requestForm.Group)}" +
                 $"&sdate={requestForm.Sdate}" +
                 $"&edate={requestForm.Edate}", Encoding.UTF8, "text/html");
                  
             string responseString = 
                 await _testClass.PostDataAsync("http://195.95.232.162:8082/cgi-bin/timetable.cgi?n=700", content);
             
-            var days = _testClass.ProcessData(responseString);
-            return days;
+            return _testClass.ProcessData(responseString); // days
         }
     }
 }
